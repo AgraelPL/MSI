@@ -1,0 +1,24 @@
+<h1>Delegats</h1>
+
+<table>
+
+  <tr>
+    <th>Imie i Nazwisko</th>
+    <th>Data od</th>
+    <th>Lp.</th>
+    <th>Data do</th>
+    <th>Miejsce wyjazdu</th>
+    <th>Miejsce przyjazdu</th>
+  </tr>
+
+{{#each payload}}
+  <tr>
+    <th>{{inc @index}}</td>
+    <td>{{this.FullName}}</td>
+    <td>{{this.dataod}}</td>
+    <td>{{this.datado}}</td>
+    <td>{{this.miejsceod}}</td>
+    <td>{{this.miejscedo}}</td>   
+  </tr>
+{{/each}}
+</table>

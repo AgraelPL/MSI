@@ -1,0 +1,186 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+
+
+a:link,
+a:visited {
+  text-decoration: none;
+  /* //color: white; */
+  /* font-size: 1.5rem; */
+}
+
+img {
+  display: block;
+  width: calc(10vw + 5vh);
+  object-fit: cover;
+}
+
+body {
+  display: flex;
+  font-family: "Baloo Tamma 2";
+}
+
+/* **************** NAV - ASIDE SECTION****************** */
+
+aside {
+  width: 25vw;
+  height: 100vh;
+  padding: 5vw 1vh;
+
+  display: flex;
+  justify-content: center;
+}
+
+.side-nav-content {
+  height: 95%;
+}
+
+.side-nav__content--logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#lewy {
+  padding: 5vh 0 10vh 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: flex-start;
+}
+
+#lewy a {
+  /* padding: 0.6rem 0.6rem;     */
+  font-size: 2rem;
+  margin: 2rem 0;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: red;
+}
+
+/* ***************** MAIN SECTION */
+
+main {
+  width: 75vw;
+  padding: 5vw;
+}
+
+
+
+#prawy {
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+}
+
+.htmlElements input,
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+  outline: none;
+}
+
+.htmlElements label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+  text-align: center;
+}
+
+
+
+.label_container {
+  
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;  
+}
+
+.row{
+    display: flex;    
+}
+
+.col-25{
+    /* display: flex; */
+    flex-direction: row;
+    width: 25%;
+    margin-top: 6px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.col-75{
+    /* display: flex; */
+    flex-direction: row;
+    width: 75%;
+    margin-top: 6px;
+    
+}
+
+.row:nth-child(8){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.label_container ol{
+  height:20%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5rem;
+  margin:2vh 2vw;
+  padding: 1vh 1vw;
+  background-color: white;
+}
+
+.label_container li{
+  margin:1vh 1vw;
+  padding:1vh 1vw;
+  border-bottom : 1px solid red;
+  cursor: pointer;  
+}
+
+.color_selector{   
+  width:90%;
+}
+
+
+/* ///////////////////////////////////// Employees ///////////////////////////////// */
+
+.employees_container{
+  padding:2vh 2vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+#employees{
+  text-align: center;
+  padding: 0 .02vw;
+  font-size: 1.5rem;
+  background-color:red;
+}
+
+
+

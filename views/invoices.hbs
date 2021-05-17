@@ -1,0 +1,73 @@
+<h1>Invoices</h1>
+
+<table id="invocesTable">
+  <tr>
+    <th>Lp</th>
+    <th>Opis</th>
+    <th>MPK</th>
+    <th>Kwota Netto</th>
+    <th>Ilość</th>
+    <th
+      style="width: 500px
+    ;"
+    >VAT</th>
+    <th>Kwota Brutto</th>
+    <th>Wartość Netto</th>
+    <th>Wartość Brutto</th>
+  </tr>
+
+  {{#each payload}}
+    <tr class="invoicesRow {{this.rowID}}">
+
+      <td ></td>1</td>
+      <td>{{this.description}}</td>
+      <td>{{this.MPK}}</td>
+      <td><input class="Knetto" onkeyup="show()" type="text" value={{this.Knetto}} /></td>
+      <td><input class="ilosc" type="text" value="5" /></td>
+      <td>
+        <select onchange="hello()"class="InvoicesSezlect">
+          <option value="0">0%</option>
+          <option selected value="1.03">3%</option>
+          <option value="1.08">8%</option>
+          <option value="1.23">23%</option>
+        </select></td>
+      <td><input type="text" value="32.00" /></td>
+      <td><input type="text" value="250.95" /></td>
+      <td><input type="text" value="380.92" /></td>
+
+    </tr>
+  {{/each}}
+</table>
+
+<script>
+
+    function hello(){
+        console.log('hellol');
+        console.log(event.target.value);
+    }
+
+    function show(){
+        
+    let Knetto = event.target;
+
+    let row = Knetto.parentNode.parentNode;
+
+    
+   
+    
+    }
+    
+
+    
+    
+   
+
+   
+   
+ 
+    
+
+
+
+
+</script>

@@ -1,0 +1,62 @@
+<h1>Clients</h1>
+
+<div id="calbackMessage"></div>
+
+<table id="clientsTable">
+
+  <tr>
+    <th>Lp.</th>
+    <th>NIP</th>
+    <th>REGON</th>
+    <th>NAZWA</th>
+    <th>PŁATNIK VAT</th>
+    <th>ULICA</th>
+    <th>NUMER DOMU</th>
+    <th>NUMER MIESZKANIA</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+{{#each payload}}
+  <tr>    
+    <form action="/clients/addClient" method="post"></form>
+    <th>{{inc @index}}</td>
+    <td> <input class='{{this.Id}}'  value="{{this.NIP}}" disabled type="text" ></td>
+    <td> <input class='{{this.Id}}' value="{{this.REGON}}" disabled type="text" ></td>
+    <td> <input class='{{this.Id}}' value="{{this.Nazwa}}" disabled type="text" ></td>
+    <td> <input class='{{this.Id}}' {{checked this.VAT}} disabled type="checkbox" ></td>
+    <td> <input class='{{this.Id}}' value="{{this.Ulica}}" disabled type="text" ></td>  
+    <td> <input class='{{this.Id}}' value="{{this.NumerDomu}}" disabled type="text" ></td>
+    <td> <input class='{{this.Id}}' value="{{this.NumerMieszkania}}" disabled type="text" ></td>    
+    <td><button type="submit" class="{{this.Id}}" >Edytuj</button></td>
+    <td><button type="button" class="{{this.Id}}" >Usuń</button></td>     
+  </tr>
+
+  </form>
+{{/each}}
+</table>
+
+<form action="/clients/addClient" method="post">
+  <label for="fname">NIP</label>
+  <input type="text"  name="NIP"><br><br>
+  <label for="lname">REGON</label>
+  <input type="text"  name="REGON"><br><br>
+  <label for="lname">Nazwa</label>
+  <input type="text"  name="Nazwa"><br><br>
+  <input type="checkbox" id="scales" name="VAT"
+         checked="false">
+    <label for="scales">VAT</label>
+    <label for="lname">Ulica</label>
+  <input type="text"  name="Ulica"><br><br>
+     <label for="lname">Nr Domu</label>
+  <input type="text"  name="Nrdomu"><br><br>
+   <label for="lname">Nr Mieszkania</label>
+  <input type="text"  name="Nrmieszkania"><br><br>  
+  
+  <input id="submitBtn" type="submit" value="Submit">
+</form>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="module" src="/scripts/client.js"></script>
