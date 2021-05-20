@@ -1,11 +1,11 @@
 <h1>Delegats</h1>
 
+<article class="delegats_container">
 <table>
-
   <tr>
-    <th>Imie i Nazwisko</th>
-    <th>Data od</th>
     <th>Lp.</th>
+    <th>Imie i Nazwisko</th>
+    <th>Data od</th>   
     <th>Data do</th>
     <th>Miejsce wyjazdu</th>
     <th>Miejsce przyjazdu</th>
@@ -13,7 +13,7 @@
 
 {{#each payload}}
   <tr>
-    <th>{{inc @index}}</td>
+    <td>{{inc @index}}</td>
     <td>{{this.FullName}}</td>
     <td>{{this.dataod}}</td>
     <td>{{this.datado}}</td>
@@ -22,3 +22,5 @@
   </tr>
 {{/each}}
 </table>
+</article>
+

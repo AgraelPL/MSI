@@ -1,7 +1,7 @@
 const db = require('../config/database');
 
 module.exports = {
-    addClient: (req, res) => {
+    addClient: async (req, res) => {
 
         function checkVatStatus(a) {
             if (a != null) {
@@ -19,23 +19,28 @@ module.exports = {
             VAT: checkVatStatus(req.body.VAT),
             Ulica: req.body.Ulica,
             Nrdomu: req.body.Nrdomu,
-            Nrmieszkania: req.body.Nrmieszkania
-        };
+            Nrmieszkania: req.body.Nrmieszkania,
+            Aktywny: 1
+        };      
 
-
+        const checkIfExist = `SELECT * FROM clients WHERE NIP = '${data.NIP}' `
         const queryStr =
-            `INSERT INTO clients (NIP,REGON,Nazwa,VAT,Ulica,NumerDomu,NumerMieszkania) VALUES ("${data.NIP}","${data.REGON}","${data.Nazwa}","${data.VAT}","${data.Ulica}","${data.Nrdomu}","${data.Nrmieszkania}")`;
+                    `INSERT INTO clients (NIP,REGON,Nazwa,VAT,Ulica,NumerDomu,NumerMieszkania,Aktywny) VALUES ("${data.NIP}","${data.REGON}","${data.Nazwa}","${data.VAT}","${data.Ulica}","${data.Nrdomu}","${data.Nrmieszkania}","${data.Aktywny}")`;
 
-        db.query(queryStr, (err, result) => {
-            if (err) throw err;
-            res.redirect('/clients');
+        db.query(checkIfExist, (err, result) => {
+            if (result.length === 0) {
+                db.query(queryStr, (err, result) => {
+                    if (err) throw err;
+                    res.redirect('/clients');
+                })
+            }
+            else {          
+                res.redirect('/clients');
+            }
         })
-
     },
 
     updateClient: (req, res) => {
-
-
         function checkVatStatus(a) {
             if (a == true) {
                 return 1;
@@ -90,19 +95,14 @@ module.exports = {
             NIP: req.body.NIP,
         };
 
-        const selectQuery =
-            `SELECT * FROM clients
-        WHERE NIP = '${data.NIP}';
-        `
-
         const queryStr =
-            `DELETE FROM clients        
+            `UPDATE clients
+        SET
+            Aktywny = 0          
         WHERE
             NIP = '${data.NIP}'           
         `
-
-
-
+        
         db.query(queryStr, (err) => {
             if (err) {
                 console.log(err);

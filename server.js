@@ -11,7 +11,6 @@ const indexRoute = require('./routes/index');
 const clientsRoute = require('./routes/clients');
 
 const app = express();
-
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json());
 
@@ -26,9 +25,8 @@ app.engine('hbs', exphbs({
 }));
 
 app.use(morgan('dev'))
-
 app.use(express.static(path.join(__dirname ,'public')));
-
+app.use(express.static(path.join(__dirname ,'services')));
 
 app.get('/favico.ico', (req, res) => {
     res.sendStatus(404);
@@ -39,5 +37,10 @@ const PORT = process.env.PORT || 5000;
 
 app.use('/',indexRoute);
 app.use('/clients',clientsRoute);
+
+app.use( function(req, res, next) {   
+    res.status(404)
+    res.render('404');
+});
 
 app.listen(PORT, console.log(`Server is running in ${process.env.NODE_ENV} on ${PORT}`));

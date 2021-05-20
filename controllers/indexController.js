@@ -1,67 +1,19 @@
 const db = require('../config/database');
-
-
+const invoicesData = require('../services/serverServices');
 
 module.exports = {
-    index: (req, res) => {
+    index: (req, res) => { res.render('home')},
+    htmlElements: (req, res) => { res.render(`htmlelements`); },
+    employees: (req, res) => { res.render(`employees`) },
 
-        res.render('home')
-    },
-
-
-    htmlElements: (req, res) => {
-
-
-
-        res.render(`htmlelements`);
-
-    },
-    employees: (req, res) => {
-
-
-
-        res.render(`employees`);
-
-    },
     invoices: (req, res) => {
-
-        var data = [
-            {
-                "rowID": "1",
-                "description": 'lorem insadsadsadasdasda',
-                "MPK": "IT",
-                "Knetto": 25.99,
-                "Ilosc": 5,
-                "VAT": '0%',
-                "Kbrutto": 32.90,
-                "Wnetto": 120,
-                "WBrutto": 250
-
-            },
-            {
-                "rowID": "2",
-                "description": 'lorem insadsadsadasdasda',
-                "MPK": "IT",
-                "Knetto": 25.99,
-                "Ilosc": 5,
-                "VAT": '0%',
-                "Kbrutto": 32.90,
-                "Wnetto": 120,
-                "WBrutto": 250
-            }
-
-
-        ]
-
-
+        var data = invoicesData.invoices;
         res.render(`invoices`, {
             payload: data
         });
-
     },
 
-    delegats: async (req, res) => {
-
+    delegats: async (req, res) => {        
         let data = await db.promise().query(`
         SELECT 
             CONCAT(imie, " ", nazwisko) AS FullName,
@@ -69,21 +21,20 @@ module.exports = {
             DATE_FORMAT(dataod, "%d/%m/%Y") AS datado,
             miejsceod,
             miejscedo
-        from delegats `);
-
+        from delegats       
+        `);   
+        
         if (!data) {
             res.redirect('/')
         }
-        else {
-            console.log(data[0]);
+        else {           
             res.render(`delegats`, {
                 payload: data[0]
             });
         }
-
     },
-    clients: async (req, res) => {
 
+    clients: async (req, res) => {
         let data = await db.promise().query(`
         SELECT
             Id, 
@@ -94,18 +45,17 @@ module.exports = {
             Ulica,
             NumerDomu,
             NumerMieszkania
-        from clients `);
+        FROM clients
+        WHERE Aktywny = 1
+        `);
 
         if (!data) {
             res.redirect('/')
         }
-        else {
-            console.log(data[0]);
+        else {            
             res.render(`clients`, {
                 payload: data[0]
             });
         }
-      
-
     },
 }

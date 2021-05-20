@@ -1,109 +1,75 @@
 <h1>Employee</h1>
-<article class='employees_container'>
-    <table id="employees" cellspacing="0">
-        <tr>
-            <th>Lp</th>
-            <th>Imie</th>
-            <th>Nazwisko</th>
-            <th>Stanowisko</th>
-            <th>Data zatrudnienia</th>
-            <th>Ilość dni urlopowych</th>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>Jill</td>
-            <td>Smith</td>
-            <td>Pracownik</td>
-            <td>31:12:2010</td>
-            <td>20</td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>Jill</td>
-            <td>Smith</td>
-            <td>Pracownik</td>
-            <td>31:12:2010</td>
-            <td>20</td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>Jill</td>
-            <td>Smith</td>
-            <td>Pracownik</td>
-            <td>31:12:2010</td>
-            <td>20</td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>Jill</td>
-            <td>Smith</td>
-            <td>Pracownik</td>
-            <td>31:12:2010</td>
-            <td>20</td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>Jissssssll</td>
-            <td>Smith</td>
-            <td>Pracownik</td>
-            <td>31:12:2010</td>
-            <td>20</td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>Jill</td>
-            <td>Smith</td>
-            <td>Pracownik</td>
-            <td>31:12:2010</td>
-            <td>20</td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>Jill</td>
-            <td>Smith</td>
-            <td>Pracownik</td>
-            <td>31:12:2010</td>
-            <td>20</td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>Jill</td>
-            <td>Smith</td>
-            <td>Pracownik</td>
-            <td>31:12:2010</td>
-            <td>20</td>
-        </tr>
+<article class="employees_container">
+  <table id="employees" cellspacing="0">
+    <tr>
+      <th>Lp</th>
+      <th>Imie</th>
+      <th>Nazwisko</th>
+      <th>Stanowisko</th>
+      <th>Data zatrudnienia</th>
+      <th>Ilość dni urlopowych</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>Maciej</td>
+      <td>Nowak</td>
+      <td>Pracownik</td>
+      <td>31:12:2010</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>Maciej</td>
+      <td>Nowak</td>
+      <td>Pracownik</td>
+      <td>31:12:2010</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>Maciej</td>
+      <td>Nowak</td>
+      <td>Pracownik</td>
+      <td>31:12:2010</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>Maciej</td>
+      <td>Nowak</td>
+      <td>Pracownik</td>
+      <td>31:12:2010</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>Maciej</td>
+      <td>Nowak</td>
+      <td>Pracownik</td>
+      <td>31:12:2010</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>Maciej</td>
+      <td>Nowak</td>
+      <td>Pracownik</td>
+      <td>31:12:2010</td>
+      <td>20</td>
+    </tr>
 
-    </table>
-
-    <div>
-        <input type="color" id="btn_1" value="#e66465" onchange="colorChange()">
-        <label for="head">Head</label>
-    </div>
-
-    <div>
-        <input type="color" id="btn_2" value="#f6b73c" onchange="colorChange()">
-        <label for="body">Body</label>
-    </div>
+  </table>
 
 </article>
 
+<div>
+  <input class="picker" type="color" id="btn_1" value="#e66465" />
+  <label for="head">Pierwszy kolor</label>
+</div>
 
-<script>
-    function colorChange() {
-        const btn1 = document.getElementById('btn_1')
-        const btn2 = document.getElementById('btn_2')
-        const tr = document.getElementsByTagName('tr');
+<div>
+  <input class="picker" type="color" id="btn_2" value="#f6b73c" />
+  <label for="body">Drugi Kolor</label>
+</div>
 
-        console.log(tr)
-        for (var i = 1; i < tr.length; i++) {
-            if (i % 2 != 0) {
-                tr[i].style.backgroundColor = btn1.value;
-            }
-            else {
-                tr[i].style.backgroundColor = btn2.value;
-            }
-        }
-    }
-    colorChange();
-</script>
+<script type="module" src="scripts/employes.js"></script>

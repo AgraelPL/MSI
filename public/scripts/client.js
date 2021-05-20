@@ -1,7 +1,8 @@
+import { showMessage} from '/clientsServices.js'
 
 const btn = document.getElementsByTagName('button');
 const table = document.getElementById('clientsTable');
-// console.log(table);
+
 let Editvalue = 0;
 let Deletevalue = 0;
 
@@ -36,9 +37,9 @@ for (var i = 0; i < btn.length; i++) {
                         contentType: 'application/json',
                         data: JSON.stringify(body), // access in body
                     }).done(function (msg) {
-                        showMessage(msg)
+                        showMessage(msg);
                     }).fail(function (msg) {
-                        showMessage(msg)
+                        showMessage(msg);
                     });
 
                     arrdata[0].disabled = true;
@@ -65,14 +66,14 @@ for (var i = 0; i < btn.length; i++) {
                         const body = { NIP: arrdata[0].value }
                         x.textContent = 'Usuń';
                         $.ajax({
-                            type: 'DELETE',
+                            type: 'POST',
                             url: 'http://localhost:5000/clients/deleteClient',
                             contentType: 'application/json',
                             data: JSON.stringify(body), // access in body
                         }).done(function (msg) {
-                            showMessage(msg)
+                            showMessage(msg);
                         }).fail(function (msg) {
-                            showMessage(msg)
+                            showMessage(msg);
                         })
                         const row = x.parentNode.parentNode;
 
@@ -89,15 +90,6 @@ for (var i = 0; i < btn.length; i++) {
 }
 
 
-function showMessage(message) {
-    let cbMessage = document.getElementById('calbackMessage')
-    var text = document.createTextNode(`${message.msg}`);
-    //text.classList.add('cbMessageText')
-    cbMessage.appendChild(text);
-    setTimeout(() => { cbMessage.innerHTML = '' }, 3000);
 
-
-
-}
 
 

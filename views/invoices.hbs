@@ -1,73 +1,54 @@
 <h1>Invoices</h1>
-
-<table id="invocesTable">
-  <tr>
-    <th>Lp</th>
-    <th>Opis</th>
-    <th>MPK</th>
-    <th>Kwota Netto</th>
-    <th>Ilość</th>
-    <th
-      style="width: 500px
+<article class="invoices_container">
+  <table id="invocesTable equalDivide" cellspacing="0">
+    <tr>
+      <th>Lp</th>
+      <th>Opis</th>
+      <th>MPK</th>
+      <th>Kwota Netto</th>
+      <th>Ilość</th>
+      <th
+        style="width: 500px
     ;"
-    >VAT</th>
-    <th>Kwota Brutto</th>
-    <th>Wartość Netto</th>
-    <th>Wartość Brutto</th>
-  </tr>
-
-  {{#each payload}}
-    <tr class="invoicesRow {{this.rowID}}">
-
-      <td ></td>1</td>
-      <td>{{this.description}}</td>
-      <td>{{this.MPK}}</td>
-      <td><input class="Knetto" onkeyup="show()" type="text" value={{this.Knetto}} /></td>
-      <td><input class="ilosc" type="text" value="5" /></td>
-      <td>
-        <select onchange="hello()"class="InvoicesSezlect">
-          <option value="0">0%</option>
-          <option selected value="1.03">3%</option>
-          <option value="1.08">8%</option>
-          <option value="1.23">23%</option>
-        </select></td>
-      <td><input type="text" value="32.00" /></td>
-      <td><input type="text" value="250.95" /></td>
-      <td><input type="text" value="380.92" /></td>
-
+      >VAT</th>
+      <th>Kwota Brutto</th>
+      <th>Wartość Netto</th>
+      <th>Wartość Brutto</th>
     </tr>
-  {{/each}}
-</table>
 
-<script>
+    {{#each payload}}
+      <tr class="invoiceRow {{this.rowID}}">
 
-    function hello(){
-        console.log('hellol');
-        console.log(event.target.value);
-    }
+        <td>{{inc @index}}</td>
+        <td>{{this.description}}</td>
+        <td>{{this.MPK}}</td>
+        <td><input
+            class="invoice_{{this.rowID}}"
+            type="text"
+            value={{this.Knetto}}
+          /></td>
+        <td><input
+            class="invoice_{{this.rowID}}"
+            type="text"
+            value={{this.Ilosc}}
+          /></td>
+        <td>
+          <select class="invoice_{{this.rowID}}">
+            <option value="1" class="lll">0%</option>
+            <option selected value="1.03">3%</option>
+            <option value="1.08">8%</option>
+            <option value="1.23">23%</option>
+          </select></td>
+        <td><div class="invoice_{{this.rowID}}"></div></td>
+        <td><div class="invoice_{{this.rowID}}"></div></td>
+        <td><div class="invoice_{{this.rowID}}"></div></td>
 
-    function show(){
-        
-    let Knetto = event.target;
+      </tr>
+    {{/each}}
+  </table>
 
-    let row = Knetto.parentNode.parentNode;
+</article>
 
-    
-   
-    
-    }
-    
+<button id="color1000">Powyzej 1000,00</button>
 
-    
-    
-   
-
-   
-   
- 
-    
-
-
-
-
-</script>
+<script type="module" src="/scripts/invoices.js"></script>

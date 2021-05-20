@@ -10,7 +10,23 @@
   font-size: 62.5%;
 }
 
+input{
+  border-radius: 1px solid #fff;
+}
 
+.htmlElementsInput{
+  width:90%;
+  text-align: center; 
+}
+
+input[type='submit']{
+  padding: 10px;
+}
+
+button{
+  padding:5px;
+  cursor: pointer;
+}
 
 a:link,
 a:visited {
@@ -29,6 +45,8 @@ body {
   display: flex;
   font-family: "Baloo Tamma 2";
 }
+
+
 
 /* **************** NAV - ASIDE SECTION****************** */
 
@@ -73,9 +91,13 @@ aside {
 
 /* ***************** MAIN SECTION */
 
+h1{
+  text-align: center;
+}
+
 main {
   width: 75vw;
-  padding: 5vw;
+  padding-top: 5vh; 
 }
 
 
@@ -88,8 +110,14 @@ main {
   /* align-items: center; */
 }
 
-.htmlElements input,
-select,
+
+
+td input{
+  width: 80%;
+  box-sizing: border-box;
+}
+
+.htmlElements,
 textarea {
   width: 100%;
   padding: 12px;
@@ -120,19 +148,21 @@ textarea {
 }
 
 .col-25{
-    /* display: flex; */
+    display: flex;
     flex-direction: row;
     width: 25%;
     margin-top: 6px;
     text-align: center;
     font-size: 1.5rem;
+    justify-content:center;
+    align-items: center;
 }
 
 .col-75{
-    /* display: flex; */
+    display: flex;
     flex-direction: row;
     width: 75%;
-    margin-top: 6px;
+    margin-top: 6px;   
     
 }
 
@@ -172,6 +202,7 @@ textarea {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-bottom: 10px;
 
 }
 
@@ -179,8 +210,105 @@ textarea {
   text-align: center;
   padding: 0 .02vw;
   font-size: 1.5rem;
-  background-color:red;
+  background-color:#fff;
 }
 
 
+/* ///////////////////////////////// Invoices ////////////////////////////////////// */
 
+.invoices_container{  
+  padding:2vh 2vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 50px;
+  text-align: center;
+  font-size: 1.1rem;
+
+}
+
+.invoiceRow td:nth-child(1){
+  width:100px;
+}
+
+.invoiceRow td:nth-child(2){
+  width:200px;
+}
+
+.invoiceRow td:nth-child(3){
+  width:50px;
+}
+
+.invoiceRow td:nth-child(4){
+  width:15%;
+}
+
+.invoiceRow td:nth-child(5){
+  width:10%;
+}
+
+.invoiceRow td:nth-child(6){
+  width:10%;
+}
+.invoiceRow td:nth-child(7){
+  font-weight: bold;
+  width:100px;
+}
+.invoiceRow td:nth-child(8){
+  font-weight: bold;
+  color: red;
+  width:100px;
+}
+.invoiceRow td:nth-child(9){
+  width:100px;
+  font-weight: bold;
+}
+
+/* ///////////////////////////////// Delegats ////////////////////////////////////// */
+
+.delegats_container{  
+  padding:2vh 2vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 50px;
+  text-align: center;
+  font-size: 1.1rem;
+
+}
+
+
+/* ///////////////////////////////// Clients ////////////////////////////////////// */
+
+
+.clientSubmit{
+  display: flex;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1rem;
+}
+
+.first_col{
+  display: flex;
+  flex-direction:column;
+}
+
+.sec_col{
+  display: flex;
+  flex-direction:column;
+}
+
+.trd_col{
+  display: flex;
+  flex-direction:column;
+  justify-content:space-evenly;
+}
+
+.vat{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+td {
+text-align: center
+  
+}
