@@ -253,3 +253,11 @@ td{
   text-align:center;
   align-items:center;
 }
+
+.client_cell button{
+  padding:0.5rem 1rem;
+}
+
+.clients_container h1{
+  margin-top:3rem;
+}
