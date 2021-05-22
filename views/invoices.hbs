@@ -1,16 +1,13 @@
-<h1>Invoices</h1>
 <article class="invoices_container">
-  <table id="invocesTable equalDivide" cellspacing="0">
-    <tr>
+  <h1>Invoices</h1>
+  <table id="invocesTable " cellspacing="0">
+    <tr class="invocesTable_header">
       <th>Lp</th>
       <th>Opis</th>
       <th>MPK</th>
       <th>Kwota Netto</th>
       <th>Ilość</th>
-      <th
-        style="width: 500px
-    ;"
-      >VAT</th>
+      <th>VAT</th>
       <th>Kwota Brutto</th>
       <th>Wartość Netto</th>
       <th>Wartość Brutto</th>
@@ -46,9 +43,7 @@
       </tr>
     {{/each}}
   </table>
-
+  <button id="color1000">Powyzej 1000,00</button>
 </article>
-
-<button id="color1000">Powyzej 1000,00</button>
 
 <script type="module" src="/scripts/invoices.js"></script>

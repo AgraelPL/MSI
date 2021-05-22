@@ -23,7 +23,12 @@ export function color1000(obj, inputs) {
           const row = inputs[i].parentNode.parentNode;
           row.style.backgroundColor = "green";
         }
+        else{
+          const row = inputs[i].parentNode.parentNode;
+            row.style.backgroundColor = "white";
+        }
       }
+      
     }
   })
 }

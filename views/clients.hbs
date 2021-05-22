@@ -1,38 +1,95 @@
+
+<article class="clients_container">
 <h1>Clients</h1>
 
-<div id="calbackMessage"></div>
 
-<table id="clientsTable">
-  <tr>
-    <th>Lp.</th>
-    <th>NIP</th>
-    <th>REGON</th>
-    <th>NAZWA</th>
-    <th>PŁATNIK VAT</th>
-    <th>ULICA</th>
-    <th>NUMER DOMU</th>
-    <th>NUMER MIESZKANIA</th>  
-  </tr>
+    <table id="clientsTable">
+    <tr class="clientsTable_header">
+      <th>Lp.</th>
+      <th>NIP</th>
+      <th>REGON</th>
+      <th>NAZWA</th>
+      <th>PŁATNIK VAT</th>
+      <th>ULICA</th>
+      <th>NUMER DOMU</th>
+      <th>NUMER MIESZKANIA</th>  
+    </tr>
  {{#each payload}}
-<form action="/clients/addClient" method="post"></form>
-  <tr>    
-    <td>{{inc @index}}</td>
-    <td> <input class='{{this.Id}}' value="{{this.NIP}}" disabled type="text" ></td>
-    <td> <input class='{{this.Id}}' value="{{this.REGON}}" disabled type="text" ></td>
-    <td> <input class='{{this.Id}}' value="{{this.Nazwa}}" disabled type="text" ></td>
-    <td> <input class='{{this.Id}}' {{checked this.VAT}} disabled type="checkbox" ></td>
-    <td> <input class='{{this.Id}}' value="{{this.Ulica}}" disabled type="text" ></td>  
-    <td> <input class='{{this.Id}}' value="{{this.NumerDomu}}" disabled type="text" ></td>
-    <td> <input class='{{this.Id}}' value="{{this.NumerMieszkania}}" disabled type="text" ></td>    
-    <td><button type="submit" class="{{this.Id}}" >Edytuj</button></td>
-    <td><button type="button" class="{{this.Id}}" >Usuń</button></td>   
-  </tr>
-</form>
-{{/each}}
-
+  <form class="client_form" action="/clients/addClient" method="post"></form>
+    <tr class="client_row">    
+      <td class="client_cell">{{inc @index}}</td>
+      <td class="client_cell"> <input class='{{this.Id}}' value="{{this.NIP}}" disabled type="text" ></td>
+      <td class="client_cell"> <input class='{{this.Id}}' value="{{this.REGON}}" disabled type="text" ></td>
+      <td class="client_cell"> <input class='{{this.Id}}' value="{{this.Nazwa}}" disabled type="text" ></td>
+      <td class="client_cell"> <input class='{{this.Id}}' {{checked this.VAT}} disabled type="checkbox" ></td>
+      <td class="client_cell"> <input class='{{this.Id}}' value="{{this.Ulica}}" disabled type="text" ></td>  
+      <td class="client_cell"> <input class='{{this.Id}}' value="{{this.NumerDomu}}" disabled type="text" ></td>
+      <td class="client_cell"> <input class='{{this.Id}}' value="{{this.NumerMieszkania}}" disabled type="text" ></td>    
+      <td class="client_cell"><button type="submit" class="{{this.Id}}" >Edytuj</button></td>
+      <td class="client_cell"><button type="button" class="{{this.Id}}" >Usuń</button></td>   
+    </tr>
+  </form>
+  {{/each}}
+ 
 </table>
 
-<form action="/clients/addClient" method="post" class="clientSubmit" >
+
+<form class="clientBtnForm" action="/clients/addClient" method="post" class="clientSubmit" >
+
+ <div class="first_col">
+
+   <div class="input_container">
+    <label>NIP</label>
+    <input required minlength="5" maxlength="5" type="text"  name="NIP">  
+   </div>
+  
+<div class="input_container">
+  <label>REGON</label>
+  <input required minlength="5" maxlength="5" type="text"  name="REGON">
+  </div>
+<div class="input_container">
+  <label required for="lname">Ulica</label>
+  <input required minlength="3" maxlength="20" type="text"  name="Ulica"> 
+  </div>
+<div class="input_container">
+  <label>Nazwa</label>
+  <input required minlength="5" maxlength="20" type="text"  name="Nazwa">  
+   </div>
+<div class="input_container">
+  <label>Nr Mieszkania</label>
+  <input required minlength="1" maxlength="5" type="text"  name="Nrmieszkania"> 
+   </div>
+  <div class="input_container">
+  <label required for="lname">Nr Domu</label>
+  <input required minlengh="1" maxlength="5" type="text"  name="Nrdomu">  
+ </div>
+ 
+ 
+ </div>
+
+ <div class="sec_col">   
+      <label for="scales">VAT</label>
+      <input type="checkbox" name="VAT" checked="false">
+   
+  <input id="submitBtn" type="submit" value="Dodaj Klienta"> 
+ </div>
+
+</form>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{!-- <form action="/clients/addClient" method="post" class="clientSubmit" >
 
  <div class="first_col">
   <label>NIP</label>
@@ -61,7 +118,43 @@
  </div>
 
 </form>
-
+</article> --}}
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="module" src="/scripts/client.js"></script>
+
+
+
+
+
+{{!-- <table id="clientsTable">
+  <tr>
+    <th>Lp.</th>
+    <th>NIP</th>
+    <th>REGON</th>
+    <th>NAZWA</th>
+    <th>PŁATNIK VAT</th>
+    <th>ULICA</th>
+    <th>NUMER DOMU</th>
+    <th>NUMER MIESZKANIA</th>  
+  </tr>
+ {{#each payload}}
+    <form action="/clients/addClient" method="post"></form>
+    <tr>    
+    <td>{{inc @index}}</td>
+    <td> <input class='{{this.Id}}' value="{{this.NIP}}" disabled type="text" ></td>
+    <td> <input class='{{this.Id}}' value="{{this.REGON}}" disabled type="text" ></td>
+    <td> <input class='{{this.Id}}' value="{{this.Nazwa}}" disabled type="text" ></td>
+    <td> <input class='{{this.Id}}' {{checked this.VAT}} disabled type="checkbox" ></td>
+    <td> <input class='{{this.Id}}' value="{{this.Ulica}}" disabled type="text" ></td>  
+    <td> <input class='{{this.Id}}' value="{{this.NumerDomu}}" disabled type="text" ></td>
+    <td> <input class='{{this.Id}}' value="{{this.NumerMieszkania}}" disabled type="text" ></td>    
+    <td><button type="submit" class="{{this.Id}}" >Edytuj</button></td>
+    <td><button type="button" class="{{this.Id}}" >Usuń</button></td>   
+    </tr>
+    </form>
+{{/each}}
+
+ </div>
+ 
+</table> --}}

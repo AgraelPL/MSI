@@ -1,26 +1,24 @@
-<h1>Delegats</h1>
-
 <article class="delegats_container">
-<table>
-  <tr>
-    <th>Lp.</th>
-    <th>Imie i Nazwisko</th>
-    <th>Data od</th>   
-    <th>Data do</th>
-    <th>Miejsce wyjazdu</th>
-    <th>Miejsce przyjazdu</th>
-  </tr>
+  <h1>Delegats</h1>
+  <table class="delegats_table">
+    <tr class="delegats_table_header">
+      <th>Lp.</th>
+      <th>Imie i Nazwisko</th>
+      <th>Data od</th>
+      <th>Data do</th>
+      <th>Miejsce wyjazdu</th>
+      <th>Miejsce przyjazdu</th>
+    </tr>
 
-{{#each payload}}
-  <tr>
-    <td>{{inc @index}}</td>
-    <td>{{this.FullName}}</td>
-    <td>{{this.dataod}}</td>
-    <td>{{this.datado}}</td>
-    <td>{{this.miejsceod}}</td>
-    <td>{{this.miejscedo}}</td>   
-  </tr>
-{{/each}}
-</table>
+    {{#each payload}}
+      <tr>
+        <td>{{inc @index}}</td>
+        <td>{{this.FullName}}</td>
+        <td>{{this.dataod}}</td>
+        <td>{{this.datado}}</td>
+        <td>{{this.miejsceod}}</td>
+        <td>{{this.miejscedo}}</td>
+      </tr>
+    {{/each}}
+  </table>
 </article>
-

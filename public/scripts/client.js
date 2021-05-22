@@ -33,7 +33,7 @@ for (var i = 0; i < btn.length; i++) {
                     }
                     $.ajax({
                         type: 'POST',
-                        url: 'http://localhost:5000/clients/updateClient',
+                        url: 'http://167.172.24.200/clients/updateClient',
                         contentType: 'application/json',
                         data: JSON.stringify(body), // access in body
                     }).done(function (msg) {
@@ -67,7 +67,7 @@ for (var i = 0; i < btn.length; i++) {
                         x.textContent = 'Usuń';
                         $.ajax({
                             type: 'POST',
-                            url: 'http://localhost:5000/clients/deleteClient',
+                            url: 'http://167.172.24.200/clients/deleteClient',
                             contentType: 'application/json',
                             data: JSON.stringify(body), // access in body
                         }).done(function (msg) {

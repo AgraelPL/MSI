@@ -18,7 +18,7 @@ module.exports = {
         SELECT 
             CONCAT(imie, " ", nazwisko) AS FullName,
             DATE_FORMAT(dataod, "%d/%m/%Y") AS dataod,
-            DATE_FORMAT(dataod, "%d/%m/%Y") AS datado,
+            DATE_FORMAT(datado, "%d/%m/%Y") AS datado,
             miejsceod,
             miejscedo
         from delegats       

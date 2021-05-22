@@ -1,126 +1,126 @@
-<section class='label_container'>
-    <form class="htmlElements">
+<section class="label_container">
+  <form class="htmlElements">
+    <div class="firstGrid">
+      <div class="row">
+        <p class="col-25">
+          <label>NIP</label>
+        </p>
+        <p class="col-75">
+          <input class="htmlElementsInput" type="text" placeholder="NIP" />
+        </p>
+      </div>
+      <div class="row">
+        <p class="col-25">
+          <label>REGON</label>
+        </p>
+        <p class="col-75">
+          <input class="htmlElementsInput" type="text" placeholder="REGON" />
+        </p>
+      </div>
+      <div class="row">
+        <p class="col-25">
+          <label>NAZWA</label>
+        </p>
+        <p class="col-75">
+          <input class="htmlElementsInput" type="text" placeholder="Nazwa" />
+        </p>
+      </div>
 
-        <div class="row">
-            <p class="col-25">
-                <label>NIP</label>
-            </p>
-            <p class="col-75">
-                <input class="htmlElementsInput" type="text" placeholder="NIP">
-            </p>
-        </div>
-        <div class="row">
-            <p class="col-25">
-                <label>REGON</label>
-            </p>
-            <p class="col-75">
-                <input class="htmlElementsInput" type="text" placeholder="REGON">
-            </p>
-        </div>
-        <div class="row">
-            <p class="col-25">
-                <label>NAZWA</label>
-            </p>
-            <p class="col-75">
-                <input class="htmlElementsInput" type="text" placeholder="Nazwa">
-            </p>
-        </div>
-        <div class="row">
-            <p class="col-25">
-                <label>DATA POWSTANIA</label>
-            </p>
-            <p class="col-75">
-                <input type="date" placeholder="Data powstania">
-            </p>
-        </div>
-        <div class="row">
-            <p class="col-25">
-                <label>ULICA</label>
-            </p>
-            <p class="col-75">
-                <input class="htmlElementsInput" type="text" placeholder="Ulica">
-            </p>
-        </div>
-        <div class="row">
-            <p class="col-25">
-                <label>NUMER DOMU</label>
-            </p>
-            <p class="col-75">
-                <input class="htmlElementsInput" type="text" placeholder="Numer domu">
-            </p>
-        </div>
-        <div class="row">
-            <p class="col-25">
-                <label>NUMER MIESZKANIA</label>
-            </p>
-            <p class="col-75">
-                <input class="htmlElementsInput" type="text" placeholder="Numer mieszkania">
-            </p>
-        </div>
-        <div class="row">
-            <p class="col-25">
-                <label>UWAGI</label>
-            </p>
-            <p class="col-75">
-                <textarea rows="10"></textarea>
-            </p>
-        </div>
+      <div class="row">
+        <p class="col-25">
+          <label>ULICA</label>
+        </p>
+        <p class="col-75">
+          <input class="htmlElementsInput" type="text" placeholder="Ulica" />
+        </p>
+      </div>
+      <div class="row">
+        <p class="col-25">
+          <label>NUMER DOMU</label>
+        </p>
+        <p class="col-75">
+          <input
+            class="htmlElementsInput"
+            type="text"
+            placeholder="Numer domu"
+          />
+        </p>
+      </div>
+      <div class="row">
+        <p class="col-25">
+          <label>NUMER MIESZKANIA</label>
+        </p>
+        <p class="col-75">
+          <input
+            class="htmlElementsInput"
+            type="text"
+            placeholder="Numer mieszkania"
+          />
+        </p>
+      </div>
+      <div class="row">
+        <p class="col-25">
+          <label>DATA POWSTANIA</label>
+        </p>
+        <p class="col-75">
+          <input type="date" placeholder="Data powstania" />
+        </p>
+      </div>
 
-        <div class="row">
-            <p class="col-25 ">
-                <select class="color_selector" id="selectColor" onchange="switchColor()">
-                    <option disabled selected>Wybierz kolor</option>
-                    <option value="zielony">zielony</option>
-                    <option value="niebieski">niebieski</option>
-                    <option value="szary">Szary</option>
-                    <option value="turkusowy">turkusowy</option>
-                    <option value="granatowy">granatowy</option>
-                    <option value="czerwony">czerwony</option>
-                    <option value="bialy">biały</option>
-                    <option value="brak">brak koloru</option>
-                </select>
-            </p>
-            <p class="col-75">
-                <select>
-                    <option disabled selected> Wybierz VAT</option>
-                    <option value="zielony">ZW</option>
-                    <option value="niebieski">NP.</option>
-                    <option value="szary">0%</option>
-                    <option value="turkusowy">3%</option>
-                    <option value="granatowy">8%</option>
-                    <option value="czerwony">23%</option>
-                </select>
-            </p>
-        </div>
+    </div>
 
+    <div class="secondGrid">
+      <div class="row">
+        <p class="col-25">
+          <label>UWAGI</label>
+        </p>
+        <p class="col-75">
+          <textarea rows="10"></textarea>
+        </p>
+      </div>
+      <div class="select_row">
+        <p class="col-25">
+          <select
+            class="color_selector"
+            id="selectColor"
+            onchange="switchColor()"
+          >
+            <option disabled selected>Wybierz kolor</option>
+            <option value="zielony">zielony</option>
+            <option value="niebieski">niebieski</option>
+            <option value="szary">Szary</option>
+            <option value="turkusowy">turkusowy</option>
+            <option value="granatowy">granatowy</option>
+            <option value="czerwony">czerwony</option>
+            <option value="bialy">biały</option>
+            <option value="brak">brak koloru</option>
+          </select>
+        </p>
+        <p class="col-75">
+          <select>
+            <option disabled selected> Wybierz VAT</option>
+            <option value="zielony">ZW</option>
+            <option value="niebieski">NP.</option>
+            <option value="szary">0%</option>
+            <option value="turkusowy">3%</option>
+            <option value="granatowy">8%</option>
+            <option value="czerwony">23%</option>
+          </select>
+        </p>
+      </div>
+    </div>
 
-    </form>
+  </form>
 
-    <ol type="1">
-        <li>Coffee</li>
-        <li>Tea</li>
-        <li>Milk</li>
-        <li>Coffee</li>
-        <li>Tea</li>
-        <li>Milk</li>
-    </ol>
+  <ol type="1">
+    <li>Coffee</li>
+    <li>Tea</li>
+    <li>Milk</li>
+    <li>Coffee</li>
+    <li>Tea</li>
+    <li>Milk</li>
+  </ol>
 
 </section>
 
 <script src="/scripts/htmlElements.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</script>
